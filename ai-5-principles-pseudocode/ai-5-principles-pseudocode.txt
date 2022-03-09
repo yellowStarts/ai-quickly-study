@@ -1,0 +1,39 @@
+# AI 5个原理伪代码
+
+# 环境
+class Environment():
+    def __init__(self):
+        初始化 Code...
+    def get_observation(self):
+        返回状态 Code...
+    def get_reward(self, action):
+        返回获得的奖励 Code...
+    def update(self, action):
+        更新环境、状态等 Code...
+
+class AI():
+    def __init__(self):
+        初始化 AI Code...
+    def train(self, state_of_the_game, reward):
+        根据状态和奖励训练 AI Code...
+    def play_action(self, state_of_the_game):
+        推测 Code...
+
+def markov_decision_process_training():
+	env = Environment()
+	ai = AI() 
+	while True:
+		state_of_the_game = env.get_observation()
+		action = ai.play_action(state_of_the_game)
+		reward = env.get_reward(action)
+		ai.train(state_of_the_game, reward)
+		env.update(action)
+
+def markov_decision_process_inference():
+	env = Environment()
+	ai = AI() 
+	while True:
+		state_of_the_game = env.get_observation()
+		action = ai.play_action(state_of_the_game)
+		env.update(action)     
+    
